@@ -1,4 +1,4 @@
-# ⚙️ Auto Project Extractor & Configuration Runner
+# ⚙️ Auto Project Extractor & Configuration Runner For OpenMusic V3
 
 **Author**: Habibunayka Miftah Al-Rizqi  
 **Version**: 1.0.0  
