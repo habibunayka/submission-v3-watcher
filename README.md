@@ -40,13 +40,45 @@ If the top-level folder only contains one directory, the script will recursively
 
 ## ⚙️ Configuration
 
-Update the `PG_CONFIG` object in the script with your local PostgreSQL credentials:
+Update the `CONFIG` object in the script with your environment:
 
 ```js
-const PG_CONFIG = {
-  user: "postgres",
-  password: "dev",
-  database: "music_db_2",
+const CONFIG = {
+    db: {
+        host: "localhost",
+        user: "postgres",
+        password: "dev",
+        database: "music_db",
+        port: 5432,
+    },
+    smtp: {
+        host: "smtp.gmail.com",
+        port: 465,
+        user: "your@email.com",
+        password: "xxxx xxxx xxxx xxxx",
+    },
+    redis: {
+        host: "localhost",
+    },
+    rabbitmq: {
+        server: "amqp://localhost",
+    },
+    aws: {
+        bucket: "xxxx",
+        accessKeyId: "xxxx",
+        secretAccessKey: "xxxx",
+    },
+    token: {
+        accessKey:
+            "xxxx",
+        refreshKey:
+            "xxxx",
+        age: 1800,
+    },
+    app: {
+        host: "localhost",
+        port: 5000,
+    },
 };
 ```
 
@@ -62,29 +94,22 @@ PGPASSWORD=dev
 PGDATABASE=music_db
 PGPORT=5432
 
-ACCESS_TOKEN_KEY=8a890b01ccfcfa6038a6eb115ff6cacc9440d5f329cc5245b5450b4b863c59fcdff00a1c28d42329c8a5b0e963637b06cdb52b5fc0c8a62737ae28f618d3a04b
-REFRESH_TOKEN_KEY=9e1c01247232a3014a41b614e1b4b8e3e59062adb2bd7a062a79b5f83fa5885699fd9f7ecf0221ca28d7cc547f3f727812917fa7fa022c06557452adff4d180c
+ACCESS_TOKEN_KEY=xxxx
+REFRESH_TOKEN_KEY=xxxx
 ACCESS_TOKEN_AGE=1800
 
 RABBITMQ_SERVER=amqp://localhost
 REDIS_SERVER=localhost
 
-AWS_BUCKET_NAME=openmusicappsbucket-reviewer
-AWS_ACCESS_KEY_ID=AKIAW5R25KFQZUTXYWK4
-AWS_SECRET_ACCESS_KEY=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
+AWS_BUCKET_NAME=xxxx
+AWS_ACCESS_KEY_ID=xxxx
+AWS_SECRET_ACCESS_KEY=xxxx
 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
 SMTP_USER=your@email.com
 SMTP_PASSWORD=xxxx xxxx xxxx xxxx
 ```
-
-### 🔧 Please make sure to adjust the configuration to match your own environment, especially:
-
-- PGHOST, PGUSER, PGPASSWORD, and PGDATABASE → update these with your actual PostgreSQL connection details.
-
-- If you are using a remote database service like Neon, make sure to replace the PGHOST and credentials accordingly.
-
 
 ---
 
