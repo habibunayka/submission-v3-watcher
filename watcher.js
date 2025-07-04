@@ -10,7 +10,7 @@
  *
  * @version      : 1.0.0
  * @license      : MIT
- * @lastModified : 2025-07-02
+ * @lastModified : 2025-07-04
  * ------------------------------------------------------------------------
  */
 
@@ -43,15 +43,15 @@ const CONFIG = {
         server: "amqp://localhost",
     },
     aws: {
-        bucket: "openmusicappsbucket-reviewer",
-        accessKeyId: "AKIAW5R25KFQZUTXYWK4",
-        secretAccessKey: "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",
+        bucket: "xxxx",
+        accessKeyId: "xxxx",
+        secretAccessKey: "xxxx",
     },
     token: {
         accessKey:
-            "8a890b01ccfcfa6038a6eb115ff6cacc9440d5f329cc5245b5450b4b863c59fcdff00a1c28d42329c8a5b0e963637b06cdb52b5fc0c8a62737ae28f618d3a04b",
+            "xxxx",
         refreshKey:
-            "9e1c01247232a3014a41b614e1b4b8e3e59062adb2bd7a062a79b5f83fa5885699fd9f7ecf0221ca28d7cc547f3f727812917fa7fa022c06557452adff4d180c",
+            "xxxx",
         age: 1800,
     },
     app: {
