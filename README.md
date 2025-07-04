@@ -1,10 +1,5 @@
 # ⚙️ Auto Project Extractor & Configuration Runner For OpenMusic V3
 
-**Author**: Habibunayka Miftah Al-Rizqi  
-**Version**: 1.0.0  
-**License**: MIT  
-**Last Modified**: 2025-07-04  
-
 ---
 
 ## 📖 Overview
