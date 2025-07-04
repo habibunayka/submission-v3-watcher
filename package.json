@@ -1,0 +1,11 @@
+{
+    "name": "submission-v3-watcher",
+    "version": "1.0.0",
+    "description": "Auto extractor and runner for submission evaluation",
+    "main": "watcher.js",
+    "author": "Habibunayka Miftah Al-Rizqi",
+    "license": "MIT",
+    "scripts": {
+        "start": "node watcher.js"
+    }
+}
