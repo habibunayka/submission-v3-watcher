@@ -127,16 +127,6 @@ The script will take care of the rest.
 
 ---
 
-## 💬 Platform Compatibility
-
-> ⚠️ WARNING - Windows Only
-
-This script using:
-- PowerShell for ZIP extraction
-- cmd with start "" for launching new terminals
-
----
-
 ## 📜 License
 
 This project is licensed under the MIT License. \
