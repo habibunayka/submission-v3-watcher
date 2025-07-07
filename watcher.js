@@ -20,6 +20,9 @@ const path = require("path");
 const { exec, spawn } = require("child_process");
 
 const WATCH_DIR = __dirname;
+const isWindows = process.platform === "win32";
+
+const CUSTOM_NAME = 'custom-name'; // If student submission has custom name
 
 // Change this
 const CONFIG = {
@@ -89,7 +92,9 @@ SMTP_PASSWORD=${CONFIG.smtp.password}
 
 // ZIP extractor
 async function extractZip(zipPath, destDir) {
-    const cmd = `powershell -Command "Expand-Archive -Path '${zipPath}' -DestinationPath '${destDir}' -Force"`;
+    const cmd = isWindows
+        ? `powershell -Command "Expand-Archive -Path '${zipPath}' -DestinationPath '${destDir}' -Force"`
+        : `unzip -o "${zipPath}" -d "${destDir}"`;
     await execShell(cmd, WATCH_DIR);
 }
 
@@ -147,8 +152,11 @@ END $$;
 
 // Running `npm run start` command in other cmd
 function runStartCommand(cwd) {
-    const fullCmd = `start "" cmd /k "cd /d \"${cwd}\" && npm run start"`;
-    console.log(`🚀 Launching: npm run start in CMD (${cwd})`);
+    const fullCmd = isWindows
+        ? `start "" cmd /k "cd /d \"${cwd}\" && npm run start"`
+        : `gnome-terminal -- bash -c "cd '${cwd}' && npm run start; exec bash"`;
+
+    console.log(`🚀 Launching: npm run start (${cwd})`);
     exec(fullCmd);
 }
 
@@ -195,7 +203,7 @@ async function processZip(zipFile) {
         const apiFolder = folderNames.find(
             (name) =>
                 /api|producer|back-end|backend/i.test(name) ||
-                name === "custom-name" // If student submission has custom name
+                name === CUSTOM_NAME
         );
 
         const consumerFolder = folderNames.find((name) => name !== apiFolder);
